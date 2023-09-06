@@ -190,17 +190,17 @@ input[type=checkbox] {
 }
 
 article section {
-  padding: 50px 35px;
+  padding: 30px 35px 60px;
 }
-article .invitation_area > h2 {
+article section .invitation {
   color: #d2af8c;
   font-family: "PTB";
   font-size: 12px;
-  text-align: center;
-  letter-spacing: 2px;
+  text-align: left;
+  letter-spacing: 1px;
 }
 article .invitation_area .writing {
-  margin-top: 40px;
+  margin-top: 60px;
   font-size: 14px;
   word-break: keep-all;
   line-height: 1.4;
