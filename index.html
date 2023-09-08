@@ -6,6 +6,7 @@
 	<link rel="stylesheet" href="./css/style.css">
 	<title>유남혁♡김도경의 결혼식에 초대합니다</title>
 	<script type="text/javascript" src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=05f264891e7e8104b1d98869e3dd0252"></script>
+	<script src="https://code.jquery.com/jquery-latest.min.js"></script>
 	<script src="./index.js"></script>
 </head>
 <body>
@@ -23,7 +24,7 @@
 		</div>
 		<article>
 			<section class="invitation_area">
-				<span class="invitation">INVITATION</span>
+				<span class="sub_title">INVITATION</span>
 				<P class="writing">
 					<strong>잔치로세~!!</strong><br>
 					"재미없고 평범하게 할거면 아무것도 안할거야"가 인생 좌우명인
@@ -50,16 +51,97 @@
 								<strong>김영주</strong>
 								<strong>이선희</strong>
 							</div>
-							의 차녀 <strong>김도경</strong>
+							의 장녀 <strong>김도경</strong>
 						</li>
 					</ul>
 				</div>
 			</section>
 			<section class="contact_area">
-				<span class="invitation">INVITATION</span>
+				<dl>
+					<dt>신랑에게 연락하기</dt>
+					<dd>
+						<a class="btn_tel" href="tel:010-4299-3724">전화</a>
+						<a class="btn_sms" href="sms:010-4299-3724">문자</a>
+					</dd>
+				</dl>
+				<dl>
+					<dt>신부에게 연락하기</dt>
+					<dd>
+						<a class="btn_tel" href="tel:010-3397-8738">전화</a>
+						<a class="btn_sms" href="sms:010-3397-8738">문자</a>
+					</dd>
+				</dl>
+			</section>
+			<section class="location_area">
+				<h2 class="title">함께가는길</h2>
+				<div class="location_info">
+					<div class="detail">
+						<strong>레이크192</strong>
+						<span class="address">강원 춘천시 사북면 가일길 555 레이크192</span>
+						<span class="tel">Tel. 0507-1310-4767</span>
+						<a href="sms:0507-1310-4767" class="btn_tel">전화하기</a>
+					</div>
+					<div id="map"></div>
+					<div class="location_app">
+						<ul>
+							<li><a href="#" class="tmap"><span>티맵</span></a></li>
+							<li><a href="#" class="kakaonavi"><span>카카오네비</span></a></li>
+							<li><a href="#" class="navermap"><span>네이버지도</span></a></li>
+							<li><a href="#" class="kakaomap"><span>카카오맵</span></a></li>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section class="account_area">
+				<h2 class="title">신랑신부에게 마음 전하기</h2>
+				<p>축하의 마음을 담아 축의금을 전달해보세요.</p>
+				<button type="button" class="btn_account">계좌번호 보기</button>
+				<span class="info_msg">화환은 극구 사양합니다.<br>예식 장소 특성상 불가합니다. 감사합니다. </sp>
 			</section>
 		</article>
+		<footer><span>Powered by <a href="#">ZNPYNK</a></span></footer>
+
+		<div class="layer_modal_wrap">
+			<div class="layer_contant">
+				<div class="account">
+					<strong>신랑측 계좌번호</strong>
+					<dl>
+						<dt>
+							<span class="bank">국민은행</span>
+							<span class="name">예금주 : 유남혁</span>
+						</dt>
+						<dd class="copy_box">
+							<span class="num">94299-3724-55</span>
+							<button class="btn_copy" type="button">복사</button>
+						</dd>
+					</dl>
+				</div>
+				<div class="account">
+					<strong>신부측 계좌번호</strong>
+					<dl>
+						<dt>
+							<span class="bank">농협은행</span>
+							<span class="name">예금주 : 이선희</span>
+						</dt>
+						<dd class="copy_box">
+							<span class="num">351-9558-9558-63</span>
+							<button class="btn_copy" type="button">복사</button>
+						</dd>
+					</dl>
+				</div>
+				<button type="button" class="btn_close">닫기</button>
+			</div>
+		</div>
 	</div>
-	<!-- <div id="map"></div> -->
 </body>
+<script>
+	$(function(){
+		$('.account_area .btn_account').click(function(){
+			$('.layer_modal_wrap').fadeIn(200);
+		})
+		$('.layer_modal_wrap .btn_close').click(function(){
+			$('.layer_modal_wrap').fadeOut(200);
+		})
+	})
+</script>
 </html>

@@ -1,5 +1,11 @@
 @charset "UTF-8";
 @font-face {
+  font-family: "PT";
+  src: url("../font/Pretendard-Pretendard-Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
   font-family: "PTB";
   src: url("../font/Pretendard-Bold.woff") format("woff");
   font-weight: 600;
@@ -192,11 +198,17 @@ input[type=checkbox] {
 article section {
   padding: 30px 35px 60px;
 }
-article section .invitation {
+article section .sub_title {
   color: #d2af8c;
   font-family: "PTB";
   font-size: 12px;
   text-align: left;
+  letter-spacing: 1px;
+}
+article section h2.title {
+  font-size: 15px;
+  font-weight: normal;
+  text-align: center;
   letter-spacing: 1px;
 }
 article .invitation_area .writing {
@@ -241,12 +253,339 @@ article .invitation_area .family > ul > li > strong {
   margin-left: 7px;
 }
 article .contact_area {
-  background: #fff;
+  overflow: hidden;
+  position: relative;
+  background: #f4f6f5;
+  padding: 40px 35px;
+}
+article .contact_area:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  background: url(../img/deco1.jpg) 0 0 no-repeat;
+  background-size: contain;
+  width: 110px;
+  height: 90px;
+  opacity: 0.7;
+}
+article .contact_area:after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  right: -8px;
+  background: url(../img/deco2.jpg) 0 0 no-repeat;
+  background-size: contain;
+  width: 110px;
+  height: 103px;
+  opacity: 0.7;
+}
+article .contact_area > dl {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin-top: 20px;
+  z-index: 5;
+}
+article .contact_area > dl:first-of-type {
+  margin-top: 0;
+}
+article .contact_area > dl dt {
+  font-size: 15px;
+}
+article .contact_area > dl dd {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+article .contact_area > dl dd > a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d2af8c;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font: 0/0 a;
+}
+article .contact_area > dl dd .btn_tel:before {
+  content: "";
+  display: block;
+  background: url(../img/ic_tell.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+}
+article .contact_area > dl dd .btn_sms {
+  margin-left: 10px;
+}
+article .contact_area > dl dd .btn_sms:before {
+  content: "";
+  display: block;
+  background: url(../img/ic_sms.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+}
+article .location_area {
+  background: #f4f6f5;
+  padding: 30px 0 20px;
+}
+article .location_area .location_info {
+  background: #ebebeb;
+  margin-top: 20px;
+}
+article .location_area .location_info .detail {
+  position: relative;
+  padding: 20px 70px 20px 30px;
+}
+article .location_area .location_info .detail > strong {
+  font-weight: normal;
+  font-size: 16px;
+}
+article .location_area .location_info .detail > span {
+  display: block;
+  color: #999;
+  font-size: 14px;
+}
+article .location_area .location_info .detail .address {
+  margin-top: 6px;
+}
+article .location_area .location_info .detail .tel {
+  margin-top: 4px;
+}
+article .location_area .location_info .detail .btn_tel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  background: #d2af8c;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font: 0/0 a;
+}
+article .location_area .location_info .detail .btn_tel:before {
+  content: "";
+  display: block;
+  background: url(../img/ic_tell.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+  width: 16px;
+  height: 16px;
+}
+article .location_area .location_info #map {
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+}
+article .location_area .location_info .location_app {
+  padding: 20px 30px 40px;
+}
+article .location_area .location_info .location_app > ul {
+  display: flex;
+  justify-content: center;
+}
+article .location_area .location_info .location_app > ul li {
+  width: 50px;
+  margin-left: 15px;
+}
+article .location_area .location_info .location_app > ul li:first-of-type {
+  margin-left: 0;
+}
+article .location_area .location_info .location_app > ul li > a {
+  display: block;
+  text-align: center;
+}
+article .location_area .location_info .location_app > ul li > a:before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  margin: 0 auto;
+}
+article .location_area .location_info .location_app > ul li > a.tmap:before {
+  background: url(../img/location_tmap.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+}
+article .location_area .location_info .location_app > ul li > a.kakaonavi:before {
+  background: url(../img/location_kakaonavi.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+}
+article .location_area .location_info .location_app > ul li > a.navermap:before {
+  background: url(../img/location_navermap.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+}
+article .location_area .location_info .location_app > ul li > a.kakaomap:before {
+  background: url(../img/location_kakaomap.png) 50% 50% no-repeat;
+  background-size: 100% 100%;
+}
+article .location_area .location_info .location_app > ul li > a span {
+  display: block;
+  margin-top: 5px;
+  font-size: 12px;
+}
+article .account_area {
+  background: #f4f6f5;
+  padding: 30px 35px 80px;
+}
+article .account_area h2.title {
+  position: relative;
+  padding: 50px 0 8px;
+  letter-spacing: 0;
+}
+article .account_area h2.title:before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  left: 50%;
+  background: url(../img/deco3.png) 50% 50% no-repeat;
+  background-size: contain;
+  width: 94px;
+  height: 82px;
+  margin-left: -47px;
+}
+article .account_area > p {
+  color: #999;
+  font-size: 14px;
+  text-align: center;
+}
+article .account_area .btn_account {
+  display: block;
+  background: #d2af8c;
+  width: 130px;
+  height: 30px;
+  margin: 20px auto 0;
+  border-radius: 100px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 30px;
+}
+article .account_area .info_msg {
+  display: block;
+  margin-top: 20px;
+  text-align: center;
+  color: #999;
+  font-size: 12px;
 }
 
-#map {
-  width: 300px;
-  height: 300px;
+footer {
+  background: #f4f6f5;
+  padding: 15px 30px;
+  text-align: right;
+}
+footer > span {
+  color: #ccc;
+  font-size: 12px;
+  font-family: "PT";
+}
+footer > span > a {
+  margin-left: 2px;
+  color: #ccc;
+  font-size: 15px;
+  font-family: "PTB";
+}
+
+.layer_modal_wrap {
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+.layer_modal_wrap:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+.layer_modal_wrap .layer_contant {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #fff;
+  width: 320px;
+  padding: 20px;
+  border-radius: 7px;
+  box-sizing: border-box;
+  transform: translate(-50%, -50%);
+}
+.layer_modal_wrap .layer_contant .btn_close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: url(../img/ic_close.png) 50% 50% no-repeat;
+  background-size: 14px 14px;
+  width: 20px;
+  height: 20px;
+  font: 0/0 a;
+}
+.layer_modal_wrap .layer_contant .account {
+  margin-top: 15px;
+  padding-top: 15px;
+  border-top: 1px solid #eee;
+}
+.layer_modal_wrap .layer_contant .account:first-of-type {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+.layer_modal_wrap .layer_contant .account > strong {
+  font-size: 14px;
+}
+.layer_modal_wrap .layer_contant .account > dl {
+  margin-top: 10px;
+}
+.layer_modal_wrap .layer_contant .account > dl > dt {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.layer_modal_wrap .layer_contant .account > dl > dt .bank {
+  font-size: 15px;
+}
+.layer_modal_wrap .layer_contant .account > dl > dt .name {
+  font-size: 13px;
+  color: #999;
+}
+.layer_modal_wrap .layer_contant .account > dl .copy_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5px;
+}
+.layer_modal_wrap .layer_contant .account > dl .copy_box .num {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #ccc;
+  border-right: 0;
+  border-radius: 7px 0 0 7px;
+  box-sizing: border-box;
+  font-size: 14px;
+  line-height: 30px;
+  font-family: "PT";
+}
+.layer_modal_wrap .layer_contant .account > dl .copy_box .btn_copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  background: #d2af8c;
+  width: 70px;
+  height: 32px;
+  border-radius: 0 7px 7px 0;
+  color: #fff;
+  font-size: 15px;
 }
 
 /*# sourceMappingURL=style.css.map */
