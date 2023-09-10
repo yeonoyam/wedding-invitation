@@ -44,18 +44,6 @@ window.addEventListener("load", () => {
                 
                 // 마커가 지도 위에 표시되도록 설정합니다
                 marker.setMap(map);
-                
-                var iwContent = '<div class="map_marker">레이크192</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-                iwPosition = new kakao.maps.LatLng(38.026206, 127.665741);  //인포윈도우 표시 위치입니다
-                
-                // 인포윈도우를 생성합니다
-                var infowindow = new kakao.maps.InfoWindow({
-                    position : iwPosition, 
-                    content : iwContent 
-                });
-                
-                // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-                infowindow.open(map, marker); 
             } catch (err) {
                 console.log(err)
             }
