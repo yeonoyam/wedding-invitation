@@ -171,7 +171,7 @@ footer {background:#f4f6f5; padding:15px 30px; text-align:right;
 		.btn_close {position:absolute; top:10px; right:10px; background:url(../img/ic_close.png) 50% 50% no-repeat; background-size:14px 14px; width:20px; height:20px; font:0/0 a;}
 		.account {margin-top:15px;
 			&:first-of-type {margin-top:0; padding-top:0; border-top:0;}
-			> strong {display:block; font-size:15px;
+			> strong {display:block; font-size:15px; font-weight:normal;
 				span {color:#999; font-size:13px;}
 			}
 			> dl {margin-top:10px;
