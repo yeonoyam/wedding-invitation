@@ -1,40 +1,5 @@
 // 카카오 지도 API 사용
 window.addEventListener("load", () => {
-    kakao.maps.load(function () {
-        try {
-            var container = document.getElementById('map');
-            var options = {
-                center: new kakao.maps.LatLng(38.026206, 127.665741),
-                level: 3
-            };
-            var map = new kakao.maps.Map(container, options);
-            
-            // 마커가 표시될 위치입니다 
-            var markerPosition  = new kakao.maps.LatLng(38.026206, 127.665741); 
-            // 마커를 생성합니다
-            var marker = new kakao.maps.Marker({
-                position: markerPosition
-            });
-            
-            // 마커가 지도 위에 표시되도록 설정합니다
-            marker.setMap(map);
-            
-            var iwContent = '<div class="map_marker">레이크192</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-            iwPosition = new kakao.maps.LatLng(38.026206, 127.665741);  //인포윈도우 표시 위치입니다
-            
-            // 인포윈도우를 생성합니다
-            var infowindow = new kakao.maps.InfoWindow({
-                position : iwPosition, 
-                content : iwContent 
-            });
-            
-            // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-            infowindow.open(map, marker); 
-        } catch (err) {
-            console.log(err)
-        }
-    });
-
     // 카카오맵
     document.querySelector(".kakaomap").addEventListener("click", (event) => {
         event.preventDefault();
@@ -59,6 +24,84 @@ window.addEventListener("load", () => {
             console.log('계좌번호 복사 에러가 발생했습니다. 새로고침 후 다시 이용해주세요', err);
         })
     })
+
+    if (kakao) {
+        kakao.maps.load(function () {
+            try {
+                var container = document.getElementById('map');
+                var options = {
+                    center: new kakao.maps.LatLng(38.026206, 127.665741),
+                    level: 3
+                };
+                var map = new kakao.maps.Map(container, options);
+                
+                // 마커가 표시될 위치입니다 
+                var markerPosition  = new kakao.maps.LatLng(38.026206, 127.665741); 
+                // 마커를 생성합니다
+                var marker = new kakao.maps.Marker({
+                    position: markerPosition
+                });
+                
+                // 마커가 지도 위에 표시되도록 설정합니다
+                marker.setMap(map);
+                
+                var iwContent = '<div class="map_marker">레이크192</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                iwPosition = new kakao.maps.LatLng(38.026206, 127.665741);  //인포윈도우 표시 위치입니다
+                
+                // 인포윈도우를 생성합니다
+                var infowindow = new kakao.maps.InfoWindow({
+                    position : iwPosition, 
+                    content : iwContent 
+                });
+                
+                // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+                infowindow.open(map, marker); 
+            } catch (err) {
+                console.log(err)
+            }
+        });
+    } else {
+        const script = document.createElement("script");
+        script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=05f264891e7e8104b1d98869e3dd0252&autoload=false";
+        document.head.appendChild(script);
+        script.onload = () => {
+            kakao.maps.load(() => {
+                try {
+                    var container = document.getElementById('map');
+                    var options = {
+                        center: new kakao.maps.LatLng(38.026206, 127.665741),
+                        level: 3
+                    };
+                    var map = new kakao.maps.Map(container, options);
+                    
+                    // 마커가 표시될 위치입니다 
+                    var markerPosition  = new kakao.maps.LatLng(38.026206, 127.665741); 
+                    // 마커를 생성합니다
+                    var marker = new kakao.maps.Marker({
+                        position: markerPosition
+                    });
+                    
+                    // 마커가 지도 위에 표시되도록 설정합니다
+                    marker.setMap(map);
+                    
+                    var iwContent = '<div class="map_marker">레이크192</div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
+                    iwPosition = new kakao.maps.LatLng(38.026206, 127.665741);  //인포윈도우 표시 위치입니다
+                    
+                    // 인포윈도우를 생성합니다
+                    var infowindow = new kakao.maps.InfoWindow({
+                        position : iwPosition, 
+                        content : iwContent 
+                    });
+                    
+                    // 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
+                    infowindow.open(map, marker); 
+                } catch (err) {
+                    console.log(err)
+                }
+            });
+        };
+    }
+
 });
 
 $(function(){
