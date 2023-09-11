@@ -580,6 +580,7 @@ footer > span > a {
 .layer_modal_wrap .layer_contant .account > strong {
   display: block;
   font-size: 15px;
+  font-weight: normal;
 }
 .layer_modal_wrap .layer_contant .account > strong span {
   color: #999;
